@@ -1,0 +1,30 @@
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Build and packaging output
+build/
+dist/
+*.spec.bak
+
+# Local credentials and secrets
+hikiot/config/default_credentials.json
+*.env
+*.pem
+*.key
+
+# Runtime output and local data
+hikiot/logs/
+hikiot/data/
+*.log
+*.xlsx
+*.xls
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

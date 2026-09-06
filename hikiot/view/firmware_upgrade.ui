@@ -1,0 +1,547 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.2">
+  <object class="tk.Toplevel" id="FirmwareUpgradeWindow" named="True">
+    <property name="height">800</property>
+    <property name="resizable">both</property>
+    <property name="title" translatable="yes">海康威视海康互联开放平台 - 固件升级压力测试工具</property>
+    <property name="width">1200</property>
+    <child>
+      <object class="ttk.Frame" id="MainFrame" named="True">
+        <property name="height">800</property>
+        <property name="width">1200</property>
+        <layout manager="pack">
+          <property name="expand">true</property>
+          <property name="fill">both</property>
+          <property name="side">top</property>
+        </layout>
+        <containerlayout manager="grid">
+          <property type="col" id="0" name="weight">3</property>
+          <property type="col" id="1" name="weight">1</property>
+          <property type="row" id="0" name="weight">1</property>
+          <property type="row" id="1" name="weight">3</property>
+        </containerlayout>
+        <child>
+          <object class="ttk.Labelframe" id="ConfigFrame" named="True">
+            <property name="text" translatable="yes">升级配置</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="sticky">nsew</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+            </layout>
+            <containerlayout manager="grid">
+              <property type="col" id="0" name="weight">1</property>
+              <property type="col" id="1" name="weight">3</property>
+              <property type="col" id="2" name="weight">1</property>
+              <property type="row" id="all" name="weight">1</property>
+            </containerlayout>
+            <child>
+              <object class="ttk.Frame" id="AuthFrame" named="True">
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                  <property name="sticky">nsew</property>
+                  <property name="padx">5</property>
+                  <property name="pady">5</property>
+                </layout>
+                <containerlayout manager="grid">
+                  <property type="col" id="1" name="weight">1</property>
+                  <property type="row" id="all" name="weight">1</property>
+                </containerlayout>
+                <child>
+                  <object class="ttk.Label" id="Label_username" named="True">
+                    <property name="text" translatable="yes">用户名:</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                      <property name="sticky">w</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Combobox" id="username_Combobox" named="True">
+                    <property name="width">20</property>
+                    <layout manager="grid">
+                      <property name="column">1</property>
+                      <property name="row">0</property>
+                      <property name="sticky">ew</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Label" id="Label_password" named="True">
+                    <property name="text" translatable="yes">密码:</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                      <property name="sticky">w</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Entry" id="password_entry" named="True">
+                    <property name="show">*</property>
+                    <property name="width">20</property>
+                    <layout manager="grid">
+                      <property name="column">1</property>
+                      <property name="row">1</property>
+                      <property name="sticky">ew</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Label" id="Label_appkey" named="True">
+                    <property name="text" translatable="yes">AppKey:</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">2</property>
+                      <property name="sticky">w</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Entry" id="appkey_entry" named="True">
+                    <property name="width">20</property>
+                    <layout manager="grid">
+                      <property name="column">1</property>
+                      <property name="row">2</property>
+                      <property name="sticky">ew</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Label" id="Label_appsecret" named="True">
+                    <property name="text" translatable="yes">AppSecret:</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">3</property>
+                      <property name="sticky">w</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Entry" id="appsecret_entry" named="True">
+                    <property name="width">20</property>
+                    <layout manager="grid">
+                      <property name="column">1</property>
+                      <property name="row">3</property>
+                      <property name="sticky">ew</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="get_app_access_token_button" named="True">
+                    <property name="text" translatable="yes">获取Token</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="columnspan">2</property>
+                      <property name="row">4</property>
+                      <property name="sticky">ew</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Label" id="Label_token_status" named="True">
+                    <property name="text" translatable="yes">状态: 未获取</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="columnspan">2</property>
+                      <property name="row">5</property>
+                      <property name="sticky">w</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Frame" id="FileFrame" named="True">
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="row">0</property>
+                  <property name="sticky">nsew</property>
+                  <property name="padx">5</property>
+                  <property name="pady">5</property>
+                </layout>
+                <containerlayout manager="grid">
+                  <property type="col" id="1" name="weight">1</property>
+                  <property type="row" id="all" name="weight">1</property>
+                </containerlayout>
+                <child>
+                  <object class="ttk.Label" id="Label_firmware" named="True">
+                    <property name="text" translatable="yes">固件升级包:</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                      <property name="sticky">w</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Entry" id="Entry_firmware_path" named="True">
+                    <property name="width">40</property>
+                    <layout manager="grid">
+                      <property name="column">1</property>
+                      <property name="row">0</property>
+                      <property name="sticky">ew</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="Button_select_firmware" named="True">
+                    <property name="text" translatable="yes">浏览</property>
+                    <layout manager="grid">
+                      <property name="column">2</property>
+                      <property name="row">0</property>
+                      <property name="sticky">w</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Label" id="Label_device_list" named="True">
+                    <property name="text" translatable="yes">设备列表文件:</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                      <property name="sticky">w</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Entry" id="Entry_device_list_path" named="True">
+                    <property name="width">40</property>
+                    <layout manager="grid">
+                      <property name="column">1</property>
+                      <property name="row">1</property>
+                      <property name="sticky">ew</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="Button_load_device_list" named="True">
+                    <property name="text" translatable="yes">加载</property>
+                    <layout manager="grid">
+                      <property name="column">2</property>
+                      <property name="row">1</property>
+                      <property name="sticky">w</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="Button_batch_add_devices" named="True">
+                    <property name="text" translatable="yes">批量添加设备</property>
+                    <layout manager="grid">
+                      <property name="column">3</property>
+                      <property name="row">1</property>
+                      <property name="sticky">w</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Label" id="Label_upgrade_status" named="True">
+                    <property name="text" translatable="yes">状态: 就绪</property>
+                    <property name="font">TkDefaultFont</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="columnspan">3</property>
+                      <property name="row">2</property>
+                      <property name="sticky">w</property>
+                      <property name="padx">5</property>
+                      <property name="pady">5</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Frame" id="ControlFrame" named="True">
+                <layout manager="grid">
+                  <property name="column">2</property>
+                  <property name="row">0</property>
+                  <property name="sticky">nsew</property>
+                  <property name="padx">5</property>
+                  <property name="pady">5</property>
+                </layout>
+                <containerlayout manager="grid">
+                  <property type="col" id="0" name="weight">1</property>
+                  <property type="row" id="all" name="weight">1</property>
+                </containerlayout>
+                <child>
+                  <object class="ttk.Frame" id="LoopConfigFrame" named="True">
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                      <property name="sticky">ew</property>
+                      <property name="pady">5</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Label" id="Label_loop_count" named="True">
+                        <property name="text" translatable="yes">循环次数:</property>
+                        <layout manager="pack">
+                          <property name="side">left</property>
+                          <property name="padx">5</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Entry" id="Entry_loop_count" named="True">
+                        <property name="width">8</property>
+                        <layout manager="pack">
+                          <property name="side">left</property>
+                          <property name="padx">5</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="Button_start_upgrade" named="True">
+                    <property name="text" translatable="yes">开始升级</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                      <property name="sticky">ew</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="Button_stop_upgrade" named="True">
+                    <property name="text" translatable="yes">停止升级</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">2</property>
+                      <property name="sticky">ew</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="Button_refresh_progress" named="True">
+                    <property name="text" translatable="yes">刷新进度</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">3</property>
+                      <property name="sticky">ew</property>
+                      <property name="padx">5</property>
+                      <property name="pady">2</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Labelframe" id="DeviceFrame" named="True">
+            <property name="text" translatable="yes">设备升级进度</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">1</property>
+              <property name="sticky">nsew</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+            </layout>
+            <containerlayout manager="grid">
+              <property type="col" id="0" name="weight">1</property>
+              <property type="row" id="0" name="weight">1</property>
+            </containerlayout>
+            <child>
+              <object class="ttk.Frame" id="TreeFrame" named="True">
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                  <property name="sticky">nsew</property>
+                </layout>
+                <containerlayout manager="grid">
+                  <property type="col" id="0" name="weight">1</property>
+                  <property type="row" id="0" name="weight">1</property>
+                </containerlayout>
+                <child>
+                  <object class="ttk.Treeview" id="Treeview_upgrade_devices" named="True">
+                    <property name="selectmode">extended</property>
+                    <property name="show">headings</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                      <property name="sticky">nsew</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Treeview.Column" id="Column_select" named="True">
+                        <property name="column_anchor">center</property>
+                        <property name="heading_anchor">center</property>
+                        <property name="minwidth">50</property>
+                        <property name="stretch">false</property>
+                        <property name="text" translatable="yes">选择</property>
+                        <property name="tree_column">false</property>
+                        <property name="visible">true</property>
+                        <property name="width">50</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Treeview.Column" id="Column_device_serial" named="True">
+                        <property name="column_anchor">center</property>
+                        <property name="heading_anchor">center</property>
+                        <property name="minwidth">150</property>
+                        <property name="stretch">true</property>
+                        <property name="text" translatable="yes">设备序列号</property>
+                        <property name="tree_column">false</property>
+                        <property name="visible">true</property>
+                        <property name="width">150</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Treeview.Column" id="Column_verification_code" named="True">
+                        <property name="column_anchor">center</property>
+                        <property name="heading_anchor">center</property>
+                        <property name="minwidth">120</property>
+                        <property name="stretch">true</property>
+                        <property name="text" translatable="yes">验证码</property>
+                        <property name="tree_column">false</property>
+                        <property name="visible">true</property>
+                        <property name="width">120</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Treeview.Column" id="status" named="True">
+                        <property name="column_anchor">center</property>
+                        <property name="heading_anchor">center</property>
+                        <property name="minwidth">100</property>
+                        <property name="stretch">true</property>
+                        <property name="text" translatable="yes">升级状态</property>
+                        <property name="tree_column">false</property>
+                        <property name="visible">true</property>
+                        <property name="width">100</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Treeview.Column" id="Column_progress" named="True">
+                        <property name="column_anchor">center</property>
+                        <property name="heading_anchor">center</property>
+                        <property name="minwidth">80</property>
+                        <property name="stretch">false</property>
+                        <property name="text" translatable="yes">进度</property>
+                        <property name="tree_column">false</property>
+                        <property name="visible">true</property>
+                        <property name="width">80</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Treeview.Column" id="Column_message" named="True">
+                        <property name="column_anchor">w</property>
+                        <property name="heading_anchor">center</property>
+                        <property name="minwidth">200</property>
+                        <property name="stretch">true</property>
+                        <property name="text" translatable="yes">消息</property>
+                        <property name="tree_column">false</property>
+                        <property name="visible">true</property>
+                        <property name="width">200</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Scrollbar" id="Scrollbar_vertical" named="True">
+                    <property name="orient">vertical</property>
+                    <layout manager="grid">
+                      <property name="column">1</property>
+                      <property name="row">0</property>
+                      <property name="sticky">ns</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Scrollbar" id="Scrollbar_horizontal" named="True">
+                    <property name="orient">horizontal</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                      <property name="sticky">ew</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Labelframe" id="LogFrame" named="True">
+            <property name="text" translatable="yes">日志输出</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">0</property>
+              <property name="rowspan">2</property>
+              <property name="sticky">nsew</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+            </layout>
+            <containerlayout manager="grid">
+              <property type="col" id="0" name="weight">1</property>
+              <property type="col" id="1" name="weight">0</property>
+              <property type="row" id="0" name="weight">1</property>
+            </containerlayout>
+            <child>
+              <object class="tk.Text" id="Text_log" named="True">
+                <property name="height">30</property>
+                <property name="state">disabled</property>
+                <property name="width">45</property>
+                <property name="wrap">word</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                  <property name="sticky">nsew</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Scrollbar" id="Scrollbar_log" named="True">
+                <property name="orient">vertical</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="row">0</property>
+                  <property name="sticky">ns</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

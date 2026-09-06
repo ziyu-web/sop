@@ -1,0 +1,7 @@
+pygubu==0.39
+requests==2.32.3
+pytz==2023.3.post1
+clipboard==0.0.4
+pandas==2.2.3
+openpyxl==3.1.5
+xlsxwriter==3.2.9
